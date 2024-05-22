@@ -4,12 +4,15 @@
   "description": "Provide component to search and choose image from unsplash images",
   "author": "thealphamerc",
   "license": "MIT",
-  "repository": "thealphamerc/unsplash-image-picker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thealphamerc/unsplash-image-picker.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
-    "node": ">=10"
+    "node": ">=18"
   },
   "keywords": [
     "react",
@@ -29,7 +32,7 @@
     "tailwind:build": "npx tailwindcss -i ./src/styles/tailwind.scss --config tailwind.config.js -o ./src/styles/tailwind.style.scss",
     "css:build:custom": "npx sass --no-source-map src/styles/custom.scss:src/styles/custom.style.scss",
     "sass": "npx sass  --no-source-map src/styles/index.scss dist/index.css",
-    "css:build:cleanup": "rm src/styles/custom.style.scss && rm src/styles/tailwind.style.scss",
+    "css:build:cleanup": "shx rm src/styles/custom.style.scss && shx rm src/styles/tailwind.style.scss",
     "export:assets": "cp -r src/assets lib",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
@@ -41,47 +44,50 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^25.1.4",
-    "@types/node": "^12.12.38",
-    "@types/react": "^16.9.27",
-    "@types/react-dom": "^16.9.7",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
-    "autoprefixer": "^9.8.8",
-    "babel-eslint": "^10.0.3",
-    "cross-env": "^7.0.2",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "gh-pages": "^2.2.0",
+    "@babel/core": "^7.24.5",
+    "@babel/eslint-parser": "^7.24.5",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-config-standard-react": "^13.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "gh-pages": "^6.1.1",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.16",
-    "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1",
-    "tailwindcss": "^3.1.8",
-    "typescript": "^3.7.5"
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "shx": "^0.3.4",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
-    "classnames": "^2.3.1",
-    "unsplash-js": "^7.0.15"
+    "classnames": "^2.5.1",
+    "unsplash-js": "^7.0.19"
   }
 }
+
